@@ -1,6 +1,3 @@
------------------------------------------------------------
--- General
------------------------------------------------------------
 -- Set leader key to space
 vim.g.mapleader = " "
 -- Set leader key to space
@@ -69,6 +66,9 @@ vim.api.nvim_create_autocmd("textyankpost", {
 		vim.highlight.on_yank({ timeout = 200, visual = true })
 	end,
 })
+
+-- Use system clipboard for all yank/delete/paste operations
+vim.opt.clipboard = "unnamedplus"
 
 -- Enable highlighting search in progress
 vim.opt.incsearch = true

@@ -9,7 +9,7 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			["<Tab>"] = { "accept" },
+			["<Tab>"] = { "accept", "fallback" },
 
 			["<C><leader>"] = { "show" },
 		},

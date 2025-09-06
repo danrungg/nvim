@@ -8,10 +8,10 @@ return {
 		"zidhuss/neotest-minitest",
 	},
 	keys = {
-		{ "<leader>tr", "<cmd>Neotest run<cr>" },
-		{ "<leader>ti", "<cmd>Neotest output<cr>" },
-		{ "<leader>ts", "<cmd>Neotest summary<cr>" },
-		{ "<leader>ta", "<cmd>lua require('neotest').run.run({ suite = true })<cr>" },
+		{ "<leader>tr", "<cmd>Neotest run<cr>", desc = "Run Test" },
+		{ "<leader>to", "<cmd>Neotest output<cr>", desc = "Test Output" },
+		{ "<leader>ts", "<cmd>Neotest summary<cr>", desc = "Test Summary" },
+		{ "<leader>tA", "<cmd>lua require('neotest').run.run({ suite = true })<cr>", desc = "Test All (Suite)" },
 	},
 	config = function()
 		require("neotest").setup({

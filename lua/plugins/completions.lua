@@ -6,6 +6,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		"rafamadriz/friendly-snippets",
 	},
+	version = "1.*",
 	opts = {
 		keymap = {
 			preset = "default",

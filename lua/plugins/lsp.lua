@@ -18,12 +18,13 @@ return {
 				},
 				ruby_lsp = {},
 				tailwindcss = {},
+				herb_ls = {},
 			},
 		},
 		config = function(_, opts)
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ruby_lsp", "tailwindcss" },
+				ensure_installed = { "lua_ls", "ruby_lsp", "tailwindcss", "herb_ls" },
 			})
 
 			for server, config in pairs(opts.servers) do

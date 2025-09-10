@@ -1,5 +1,3 @@
--- plugins/telescope.lua
-
 return {
 	"nvim-telescope/telescope.nvim",
 	keys = {
@@ -39,8 +37,26 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+		},
 	},
 	config = function()
-		require("telescope").load_extension("ui-select")
+		local telescope = require("telescope")
+
+		telescope.setup({
+			extensions = {
+				fzf = {
+					fuzzy = true, -- Enable fuzzy finding
+					override_generic_sorter = true, -- Use fzf over the generic sorter
+					override_file_sorter = true, -- Use fzf for file sorting
+					case_mode = "smart_case", -- Be case-insensitive unless a capital letter is used
+				},
+			},
+		})
+
+		telescope.load_extension("fzf")
+		telescope.load_extension("ui-select")
 	end,
 }
